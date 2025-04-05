@@ -25,8 +25,7 @@ public class SecurityConfiguration {
                         // regras sao validadas em ordem
                         // .requestMatchers(HttpMethod.DELETE, "/map").hasRole("ADMIN")
                         // .requestMatchers(HttpMethod.DELETE, "/livro").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();
