@@ -26,6 +26,7 @@ public class SecurityConfiguration {
                         // .requestMatchers(HttpMethod.DELETE, "/map").hasRole("ADMIN")
                         // .requestMatchers(HttpMethod.DELETE, "/livro").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/users").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .build();
